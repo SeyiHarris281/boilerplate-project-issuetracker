@@ -43,7 +43,7 @@ module.exports = function (app, myDataBase) {
           updated_on: timeNow,
           created_by: req.body.created_by,
           assigned_to: req.body.assigned_to || "",
-          open: 'true',
+          open: true,
           status_text: req.body.status_text || ""
         };
 
@@ -82,7 +82,11 @@ module.exports = function (app, myDataBase) {
       } else {
         updateAbleKeys.forEach(el => {
           if (Object.hasOwn(req.body, el)) {
-            updateIssue[el] = req.body[el];
+            if (el === "open") {
+              updateIssue[el] = req.body[el] === "true" ? true : false;
+            } else {
+              updateIssue[el] = req.body[el];
+            }
             updateKeyCount ++;
           }
         });

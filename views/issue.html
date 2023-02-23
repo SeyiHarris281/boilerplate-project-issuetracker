@@ -71,11 +71,11 @@
               console.log(ele);
               console.log(typeof ele.open);
               console.log(ele.open);
-              let openstatus = ele.open == 'true' ? 'open' : 'closed';
+              let openstatus = ele.open ? 'open' : 'closed';
               let single = [
                 '<div class="card text-center mb-3 issue '+openstatus+'">',
                 '<h5 class="card-header id">id: '+ele._id+'</h4>',
-                `<div class="card-body ${ele.open == 'true' ? 'bg-warning-subtle' : 'bg-info-subtle'}">`,
+                `<div class="card-body ${ele.open ? 'bg-warning-subtle' : 'bg-info-subtle'}">`,
                 '<h5 class="card-title">'+ele.issue_title+' -  ('+openstatus+')</h3>',
                 '<p class="card-text">'+ele.issue_text+'</p>',
                 '<p class="card-text">'+ele.status_text+'</p>',

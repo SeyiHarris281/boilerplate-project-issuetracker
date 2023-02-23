@@ -39,7 +39,7 @@ suite('Functional Tests', function() {
         assert.isOk(res.body._id);
         assert.isOk(res.body.created_on);
         assert.isOk(res.body.updated_on);
-        assert.equal(res.body.open, 'true');
+        assert.equal(res.body.open, true);
         done();
       });
   });
@@ -68,7 +68,7 @@ suite('Functional Tests', function() {
         assert.isOk(res.body._id);
         assert.isOk(res.body.created_on);
         assert.isOk(res.body.updated_on);
-        assert.equal(res.body.open, 'true');
+        assert.equal(res.body.open, true);
         done();
       });
   });
